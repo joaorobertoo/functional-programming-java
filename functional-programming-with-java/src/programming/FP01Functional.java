@@ -17,15 +17,19 @@ public class FP01Functional {
         numbers.forEach(System.out::println);
     }
 
-    private static boolean isEven(int number){
-        return number%2==0;
-    }
+//    private static boolean isEven(int number){
+//        return number%2==0;
+//    }
 
+    //number -> number%2==0
     private static void printEvenNumbersInListFunctional(List<Integer> numbers) {
         //convert list of numbers into stream
         //Method reference
-        numbers.stream().filter(FP01Functional::isEven).
-                forEach(System.out::println);
+        numbers.stream()
+                .filter(number -> number%2==0) //Lambda expression
+                .forEach(System.out::println);
+
+        //.filter(FP01Functional::isEven).
 
     }
 
