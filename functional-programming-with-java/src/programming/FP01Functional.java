@@ -12,7 +12,30 @@ public class FP01Functional {
         //printOddNumbersInListFunctional(numbers);
         //printCourses(courses);
         //printSpringCourse(courses);
-        printCoursesSizeEqualsOrGreaterThanFour(courses);
+        //printCoursesSizeEqualsOrGreaterThanFour(courses);
+        //printSquaresOfEvenNumbers(numbers);
+        //printCubesOfOddNumbers(numbers);//exercise
+        printNumberOfCharactersInCourseName(courses);
+    }
+
+    private static void printNumberOfCharactersInCourseName(List<String> courses) {
+        courses.stream()
+                .map(String::length)
+                .forEach(System.out::println);
+    }
+
+    private static void printCubesOfOddNumbers(List<Integer> numbers) {
+        numbers.stream()
+                .filter(number->number%2==1)
+                .map(number->number*number*number)
+                .forEach(System.out::println);
+    }
+
+    private static void printSquaresOfEvenNumbers(List<Integer> numbers) {
+        numbers.stream()
+                .filter(number->number%2==1)
+                .map(number->number*number)
+                .forEach(System.out::println);
     }
 
     private static void printCoursesSizeEqualsOrGreaterThanFour(List<String> courses) {
