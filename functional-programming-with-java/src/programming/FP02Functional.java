@@ -1,6 +1,8 @@
 package programming;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FP02Functional {
 
@@ -8,9 +10,26 @@ public class FP02Functional {
 
         List<Integer> numbers = List.of(12, 9, 13, 4, 6, 2, 4, 12, 15);
 
-       int sum = addListUsingFunctionalApproach(numbers);
+        //List<Integer> doubleList = doubleList(numbers);
 
-        System.out.println(sum);
+        List<Integer> doubleListEven =  numbers.stream()
+                .map(x->x*x)
+                .filter(x->x%2==1)
+                .collect(Collectors.toList());
+
+        List<String> courses = List.of("Java", "Python", "AWS", "Azure", "Spring", "C#");
+
+        List<Integer> coursesLenghtList = courses.stream().map(String::length).collect(Collectors.toList());
+
+       //int sum = addListUsingFunctionalApproach(numbers);
+        //System.out.println(doubleList);
+        System.out.println(coursesLenghtList);
+    }
+
+    private static List<Integer> doubleList(List<Integer> numbers) {
+        return numbers.stream()
+                .map(x->x*x)
+                .collect(Collectors.toList());
     }
 
     private static int sum(int aggregate, int nextNumber){
