@@ -67,6 +67,12 @@ public class FP03BehaviorParameterization {
         //they use primitive types(already defined) -> this is more efficient in relation to performance issues
         IntBinaryOperator intBinaryOperator = (x,y) -> x+y;
 
+        Supplier<String> supplierTest = ()->{
+          return "Teste";
+        };
+        System.out.println(supplierTest.get());
+        //We can also pass types into lambda expression arguments, but it is not necessary because it is infered
+
     }
 
     private static List<Integer> getCollect(List<Integer> numbers, Function<Integer, Integer> functionparameter) {
