@@ -43,8 +43,17 @@ public class FP03BehaviorParameterization {
         //UnaryOperator -> takes one parameter and returns result of same type
         UnaryOperator<Integer> unaryOperator = (x) -> 3*x;
 
-        System.out.println(unaryOperator.apply(10));
+        //System.out.println(unaryOperator.apply(10));
 
+        //BiPredicate -> accepts two values and return boolean
+        BiPredicate<Integer,Integer> biPredicate = (x,y)-> x==y;
+        //System.out.println(biPredicate.test(2,2));
+        //BiFunction -> accepts two values and return one value
+        BiFunction<Integer,Integer, String> biFunction = (x,y)-> String.valueOf(x+y);
+        //System.out.println(biFunction.apply(10,20));
+        //BiConsumer accepts two values and consumes then
+        BiConsumer<String,String> biConsumer = (x,y)-> System.out.println(x+y);
+        biConsumer.accept("Eu", "Sei");
 
     }
 
