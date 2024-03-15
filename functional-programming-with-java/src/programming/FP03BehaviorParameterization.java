@@ -55,6 +55,18 @@ public class FP03BehaviorParameterization {
         BiConsumer<String,String> biConsumer = (x,y)-> System.out.println(x+y);
         biConsumer.accept("Eu", "Sei");
 
+        //Other primitive functional
+        //IntBinary
+        //IntConsumer
+        //IntFunction
+        //IntPredicate
+        //IntSupplier
+        //IntToDoubleFunction
+        //IntoToLongFunction
+        //IntUnaryOperator
+        //they use primitive types(already defined) -> this is more efficient in relation to performance issues
+        IntBinaryOperator intBinaryOperator = (x,y) -> x+y;
+
     }
 
     private static List<Integer> getCollect(List<Integer> numbers, Function<Integer, Integer> functionparameter) {
