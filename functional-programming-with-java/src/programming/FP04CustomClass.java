@@ -69,8 +69,8 @@ public class FP04CustomClass {
                 new Course("Kubernets", "Cloud", 91,2000)
                 );
 //allMatch, noneMatch, anyMatch
-        Predicate<Course> reviewScoreGreaterThan95 = course -> course.getReviewScore() > 95;
         Predicate<Course> reviewScoreGreaterThan90 = course -> course.getReviewScore() > 90;
+        Predicate<Course> reviewScoreLessThen90 = course -> course.getReviewScore() < 90;
         //System.out.println(courses.stream().allMatch(reviewScoreGreaterThan95));
 
         //System.out.println(courses.stream().allMatch(reviewScoreGreaterThan90));
@@ -126,6 +126,18 @@ public class FP04CustomClass {
         System.out.println(courses.stream()
                 .dropWhile(course-> course.getReviewScore() >=95).collect(Collectors.toList()));
 
+        System.out.println( courses.stream().max(comparingByNoOfStudentsAndNoOfReviews));
+        //max returns the last element of the list
+        System.out.println( courses.stream().min(comparingByNoOfStudentsAndNoOfReviews));
+        //min returns the first element of the list
+
+        System.out.println( courses.stream().filter(reviewScoreLessThen90).min(comparingByNoOfStudentsAndNoOfReviews).orElse(new Course("Default", "Random", 1000, 1000)));
+        //Optional.empty when there is no return. A way to get around the situation
+        //Or else creates a new elements when nothing is found
+
+        System.out.println(
+                courses.stream().filter(reviewScoreGreaterThan90).findAny()
+        );
     }
 
 }
