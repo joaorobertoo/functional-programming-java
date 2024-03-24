@@ -138,6 +138,10 @@ public class FP04CustomClass {
         System.out.println(
                 courses.stream().filter(reviewScoreGreaterThan90).findAny()
         );
+
+        Predicate<Course> reviewScoreGreaterThan95 = course -> course.getReviewScore() > 95;
+        Predicate<Course> reviewScoreGreaterThen90 = course -> course.getReviewScore() > 90;
+
     }
 
 }

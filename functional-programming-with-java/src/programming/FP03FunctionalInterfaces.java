@@ -17,7 +17,7 @@ public class FP03FunctionalInterfaces {
         //predicate interface implements a function that returns a boolean value
     Predicate<Integer> isEvenPredicate = x -> x % 2 == 0;
     //function interface implements a function that receives a value and returns a value
-    Function<Integer, Integer> squareFunction = x -> x * x;
+    Function<Integer, Integer> squareFunction = (x) -> x * x;
     //consumer interface implements a function that accepts one argument and returns no result back
     Consumer<Integer> sysoutConsumer = System.out::println;
     numbers.stream()
